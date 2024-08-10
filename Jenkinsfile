@@ -4,7 +4,8 @@ pipeline {
     }
     
     tools {
-        maven 'maven3'
+        maven "maven3"
+        jdk "jdk17"
     }
     // parameters {
     //      string(name: 'staging_server', defaultValue: '13.232.37.20', description: 'Remote Staging Server')
