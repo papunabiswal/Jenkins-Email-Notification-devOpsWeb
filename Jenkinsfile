@@ -1,14 +1,22 @@
 pipeline {
-    agent any
+    agent {
+        label 'linux'
+    }
     
     tools {
-        maven 'local_maven'
+        maven 'maven3'
     }
-    parameters {
-         string(name: 'staging_server', defaultValue: '13.232.37.20', description: 'Remote Staging Server')
-    }
+    // parameters {
+    //      string(name: 'staging_server', defaultValue: '13.232.37.20', description: 'Remote Staging Server')
+    // }
 
 stages{
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/papunabiswal/Ekart.git' 
+            }
+        }
+        
         stage('Build'){
             steps {
                 sh 'mvn clean package'
@@ -25,7 +33,7 @@ stages{
             parallel{
                 stage ("Deploy to Staging"){
                     steps {
-                        sh "scp -v -o StrictHostKeyChecking=no **/*.war root@${params.staging_server}:/opt/tomcat/webapps/"
+                        sh "scp -v -o StrictHostKeyChecking=no **/*.war root@172.31.5.58:/opt/tomcat/webapps/"
                     }
                 }
             }
