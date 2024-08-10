@@ -22,19 +22,19 @@ stages{
             steps {
                 sh 'mvn clean package'
             }
-            post {
-                success {
-                    echo 'Archiving the artifacts'
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
-            }
+            // post {
+            //     success {
+            //         echo 'Archiving the artifacts'
+            //         archiveArtifacts artifacts: '**/target/*.war'
+            //     }
+            // }
         }
 
         stage ('Deployments'){
             parallel{
                 stage ("Deploy to Staging"){
                     steps {
-                        sh "scp -v -o StrictHostKeyChecking=no **/*.war root@172.31.5.58:/opt/tomcat/webapps/"
+                        sh "scp -v -o StrictHostKeyChecking=no /home/root/workspace/Demo/target/*.war root@172.31.5.58:/opt/tomcat/webapps/"
                     }
                 }
             }
