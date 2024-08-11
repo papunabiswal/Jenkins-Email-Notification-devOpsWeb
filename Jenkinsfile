@@ -66,10 +66,6 @@ pipeline {
             failure {
                 echo 'Deployment failed!'
             }
-            always {
-            // Clean up workspace after the build
-            cleanWs()
-            }
         }
     }
     
