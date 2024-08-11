@@ -2,10 +2,10 @@ pipeline {
     agent {
         label 'linux'
     }
-    tools {
-        maven 'maven3'
-        jdk 'jdk11'
-    }
+    // tools {
+    //     maven 'maven3'
+    //     jdk 'jdk11'
+    // }
 
     stages {
         stage('Git checkout') {
@@ -14,11 +14,11 @@ pipeline {
             }
         }
         
-        stage('Build') {
-            steps {
-                sh "mvn clean package"
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh "mvn clean package"
+        //     }
+        // }
     }
     
 }
