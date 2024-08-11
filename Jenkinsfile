@@ -11,6 +11,7 @@ pipeline {
         REMOTE_HOST = '172.31.7.2'
         REMOTE_DIR = '/opt/tomcat/webapps/'
         BACKUP_DIR = '/tmp/backup/'
+        WORKSPACE = '/home/root/workspace/pipeline/target/'
         FILE_NAME = 'devOpsWeb.war'
         TOMCAT_SERVICE = 'tomcat'
     }
