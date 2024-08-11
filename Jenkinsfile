@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git branch: 'DevOps', url: 'https://github.com/papunabiswal/Jenkins-Email-Notification-devOpsWeb.git'
+                git branch: 'DevOps', credentialsId: 'GitHub-Cred', url: 'https://github.com/papunabiswal/Jenkins-Email-Notification-devOpsWeb.git'
             }
         }
         
