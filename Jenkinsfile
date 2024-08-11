@@ -9,7 +9,7 @@ pipeline {
     environment {
         REMOTE_USER = 'root' // Replace with your remote server user
         REMOTE_HOST = '172.31.7.2' // Replace with your Tomcat server's IP or hostname
-        TOMCAT_HOME = '/opt/tomcat/' // Replace with the Tomcat installation path
+        TOMCAT_HOME = '/opt/tomcat' // Replace with the Tomcat installation path
         REMOTE_DIR = "${TOMCAT_HOME}/webapps/"
         BACKUP_DIR = "${TOMCAT_HOME}/backup/"
         FILE_NAME = 'devOpsWeb.war' // Replace with your application's WAR file name
