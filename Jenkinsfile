@@ -12,6 +12,7 @@ pipeline {
         TOMCAT_HOME = '/opt/tomcat' // Replace with the Tomcat installation path
         REMOTE_DIR = "${TOMCAT_HOME}/webapps/"
         BACKUP_DIR = "${TOMCAT_HOME}/backup/"
+        WORKSPACE = '/home/root/workspace/second/target/'
         FILE_NAME = 'devOpsWeb.war' // Replace with your application's WAR file name
         TOMCAT_SERVICE = 'tomcat'
     }
