@@ -9,8 +9,8 @@ pipeline {
     environment {
         REMOTE_USER = 'root'
         REMOTE_HOST = '172.31.7.2'
-        REMOTE_DIR = '/opt/tomcat/webapps'
-        BACKUP_DIR = '/tmp/backup'
+        REMOTE_DIR = '/opt/tomcat/webapps/'
+        BACKUP_DIR = '/tmp/backup/'
         FILE_NAME = 'devOpsWeb.war'
         TOMCAT_SERVICE = 'tomcat'
     }
