@@ -51,7 +51,7 @@ pipeline {
         stage('Restart Tomcat') {
             steps {
                 script {
-                    withCredentials([sshUserPrivateKey(credentialsId: 'your-ssh-key-id', keyFileVariable: 'SSH_KEY')]) {
+                    withCredentials([sshUserPrivateKey(credentialsId: 'tomcat-cred', keyFileVariable: 'SSH_KEY')]) {
                         sh """
                         ssh -i ${SSH_KEY} -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_HOST} \\
                             "sudo systemctl restart ${TOMCAT_SERVICE}"
