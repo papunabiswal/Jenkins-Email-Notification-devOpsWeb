@@ -1,7 +1,8 @@
 pipeline {
-    agent {
-        label 'linux'
-    }
+    agent any
+    // agent {
+    //     label 'linux'
+    // }
     // tools {
     //     maven 'maven3'
     //     jdk 'jdk11'
