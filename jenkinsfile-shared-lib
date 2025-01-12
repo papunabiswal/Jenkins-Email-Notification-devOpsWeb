@@ -1,7 +1,11 @@
+@library ('jenkins-lib')
 pipeline {
-    agent {
-        label 'linux'
-    }
+
+    agent any
+
+    // agent {
+    //     label 'linux'
+    // }
     // tools {
     //     maven 'maven3'
     //     jdk 'jdk11'
@@ -20,17 +24,19 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git branch: 'demodevops', credentialsId: 'GitHub-Cred', url: 'https://github.com/papunabiswal/Jenkins-Email-Notification-devOpsWeb.git'
+                git branch: 'demodevops', url: 'https://github.com/papunabiswal/Jenkins-Email-Notification-devOpsWeb.git'
             }
         }
         
         stage('Build') {
             steps {
-                sh "mvn clean package"
+                script {
+                    build ()
+                }
             }
         }
 
-        stage('Deploy to Remote Server') {
+        /*stage('Deploy to Remote Server') {
             steps {
                 script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'tomcat-cred', keyFileVariable: 'SSH_KEY')]) {
@@ -59,7 +65,7 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
     }
     
 }
