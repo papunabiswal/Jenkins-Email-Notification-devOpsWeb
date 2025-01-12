@@ -6,7 +6,7 @@ pipeline {
     //     maven 'maven3'
     //     jdk 'jdk11'
     // }
-    environment {
+    /*environment {
         REMOTE_USER = 'root' // Replace with your remote server user
         REMOTE_HOST = '172.31.7.2' // Replace with your Tomcat server's IP or hostname
         TOMCAT_HOME = '/opt/tomcat' // Replace with the Tomcat installation path
@@ -15,7 +15,7 @@ pipeline {
         WORKSPACE = '/home/root/workspace/second/target/'
         FILE_NAME = 'devOpsWeb.war' // Replace with your application's WAR file name
         TOMCAT_SERVICE = 'tomcat'
-    }
+    }*/
 
     stages {
         stage('Git checkout') {
