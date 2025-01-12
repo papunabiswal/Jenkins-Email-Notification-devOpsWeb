@@ -1,6 +1,5 @@
-@library ('jenkins-lib')
+@Library ('jenkins-lib')_
 pipeline {
-
     agent any
 
     // agent {
