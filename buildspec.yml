@@ -1,35 +1,4 @@
-/*
 version: 0.2
-
-phases:
-  install:
-    runtime-versions:
-      java: corretto11
-    commands:
-      - echo Installing dependencies...
-      - mvn install -DskipTests=true
-
-  pre_build:
-    commands:
-      - echo Running unit tests...
-      - mvn test
-
-  build:
-    commands:
-      - echo Packaging the application...
-      - mvn package
-
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - mkdir -p output
-      - cp target/*.war output/
-
-artifacts:
-  files:
-    - output/**/*.war
-  */
-  version: 0.2
 
 phases:
   install:
@@ -56,4 +25,3 @@ phases:
 artifacts:
   files:
     - target/*.war
-
