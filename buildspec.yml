@@ -15,13 +15,15 @@ phases:
 
   build:
     commands:
-      - echo Packaging the Java application...
+      - echo Packaging the application...
       - mvn package
 
   post_build:
     commands:
       - echo Build completed on `date`
+      - mkdir -p output
+      - cp target/*.war output/
 
 artifacts:
   files:
-    - target/*.war
+    - output/**/*.war
