@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11  # Or corretto8, depending on your Java version
+    commands:
+      - echo Installing dependencies...
+      - mvn install -DskipTests=true
+
+  pre_build:
+    commands:
+      - echo Running unit tests...
+      - mvn test
+
+  build:
+    commands:
+      - echo Building the Java application...
+      - mvn package
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mkdir -p output
+      - cp target/*.jar output/
+
+artifacts:
+  files:
+    - output/**/*
