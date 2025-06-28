@@ -1,7 +1,7 @@
 name: Build a WAR file using Maven
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "codebuild-codepipeline" ]
 jobs:
   build:
     runs-on: self-hosted
