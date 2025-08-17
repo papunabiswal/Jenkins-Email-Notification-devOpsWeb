@@ -24,9 +24,9 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date
-artifacts:
-  files:
-  - '**/*'
-  name: demo-app
+  artifacts:
+    files:
+    - '**/*'
+    name: demo-app
   `
 
