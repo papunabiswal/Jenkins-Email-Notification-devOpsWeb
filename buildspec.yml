@@ -28,5 +28,3 @@ phases:
     files:
     - '**/*'
     name: demo-app
-  `
-
