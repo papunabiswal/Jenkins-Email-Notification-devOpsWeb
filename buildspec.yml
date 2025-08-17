@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto11  # Change as needed (e.g., corretto17, openjdk8)
+      java: corretto11
     commands:
       - echo Installing Maven...
       - apt-get update
@@ -12,14 +12,13 @@ phases:
 
   pre_build:
     commands:
-      - echo Pre-build stage started...
+      - echo Pre-build phase started...
 
   build:
     commands:
-      - echo Build started on `date`
-      - echo Running Unit Tests...
+      - echo Running unit tests...
       - mvn clean test
-      - echo Running Maven Package...
+      - echo Building WAR package...
       - mvn package
 
   post_build:
@@ -28,7 +27,5 @@ phases:
 
 artifacts:
   files:
-    - target/*.jar
-    - target/*.war  # Optional if packaging as WAR
-    - target/surefire-reports/**  # JUnit test reports (optional)
+    - target/*.war
   discard-paths: yes
